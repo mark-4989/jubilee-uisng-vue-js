@@ -133,19 +133,19 @@ export default {
     return {
       heroSlides: [
         {
-          image: 'https://images.unsplash.com/photo-1523050854058-8df90110c9f1?ixlib=rb-4.0.3&auto=format&fit=crop&w=1800&q=80',
+          image: '../assets/download(1).jpg',
           title: 'Inspiring Young Minds',
           subtitle: 'A nurturing environment for growth, learning, and discovery.',
           cta: 'Explore Our Programs'
         },
         {
-          image: 'https://images.unsplash.com/photo-1546410531-bb4caa6b424d?ixlib=rb-4.0.3&auto=format&fit=crop&w=1800&q=80',
+          image: '../assets/download(2).jpg',
           title: 'Building Future Leaders',
           subtitle: 'Developing character, confidence, and critical thinking skills.',
           cta: 'Meet Our Faculty'
         },
         {
-          image: 'https://images.unsplash.com/photo-1569848771194-2dbfe01f4e93?ixlib=rb-4.0.3&auto=format&fit=crop&w=1800&q=80',
+          image: '../assets/download(1).jpg',
           title: 'Join Our School Family',
           subtitle: 'Where every child is valued and every family belongs.',
           cta: 'Schedule a Tour'
