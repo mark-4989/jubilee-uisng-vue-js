@@ -36,7 +36,7 @@
             <router-link to="/about" class="learn-more-btn">Learn More About Us</router-link>
           </div>
           <div class="image-content" data-aos="fade-left" data-aos-delay="300">
-            <img src="../assets/placeholder-school.jpg" alt="Students learning in classroom" class="welcome-image"/>
+            <img src="../assets/pic1.jpg" alt="Students learning in classroom" class="welcome-image"/>
           </div>
         </div>
       </div>
@@ -104,7 +104,7 @@
 <script>
 // Import Swiper modules and styles
 import { Swiper, SwiperSlide } from 'swiper/vue';
-import { Autoplay, Pagination } from 'swiper/modules';
+import { Autoplay, Pagination } from 'swiper';
 import 'swiper/css';
 import 'swiper/css/pagination';
 import 'swiper/css/autoplay';
