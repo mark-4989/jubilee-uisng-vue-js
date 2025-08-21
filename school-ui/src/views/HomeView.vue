@@ -30,7 +30,7 @@
       <div class="container">
         <div class="welcome-content">
           <div class="text-content" data-aos="fade-right">
-            <h2>Welcome to Sunshine Elementary</h2>
+            <h2>Welcome to Riruta Jubilee Academy</h2>
             <p>Where young minds are nurtured to become creative thinkers, lifelong learners, and responsible global citizens. Our dedicated staff and vibrant community work together to provide a safe, inclusive, and stimulating environment for every child.</p>
             <p>We believe in fostering a love for learning that goes beyond the classroom walls.</p>
             <router-link to="/about" class="learn-more-btn">Learn More About Us</router-link>
@@ -67,31 +67,36 @@
       </div>
     </section>
 
-    <!-- Latest News Preview Section -->
-    <section class="news-preview-section">
-      <div class="container">
-        <h2 data-aos="fade-up">Latest News & Announcements</h2>
-        <div class="news-preview-grid">
-          <article v-for="(item, index) in latestNews" :key="item.id" class="news-preview-card" 
-                  :data-aos="(index % 2 === 0) ? 'fade-right' : 'fade-left'"
-                  :data-aos-delay="index * 100">
-            <h3>{{ item.title }}</h3>
-            <p class="news-date">{{ item.date }}</p>
-            <p>{{ item.excerpt }}</p>
-            <router-link to="/news" class="read-more-link">Read More →</router-link>
-          </article>
-        </div>
-        <div class="view-all-news" data-aos="zoom-in">
-          <router-link to="/news" class="view-all-btn">View All News</router-link>
+    <!-- Testimonials Section -->
+<section class="testimonials-section">
+  <div class="container">
+    <h2 data-aos="fade-up">What Our Community Says</h2>
+    <p class="section-subtitle" data-aos="fade-up" data-aos-delay="100">Hear from our parents, students, and teachers</p>
+    <div class="testimonials-grid">
+      <div v-for="(testimonial, index) in testimonials" :key="testimonial.id" class="testimonial-card" 
+           :data-aos="'fade-up'" :data-aos-delay="index * 200">
+        <div class="testimonial-content">
+          <div class="quote-icon">"</div>
+          <p class="testimonial-text">{{ testimonial.text }}</p>
+          <div class="testimonial-author">
+            <div class="author-image">
+              <img :src="testimonial.avatar" :alt="testimonial.author">
+            </div>
+            <div class="author-details">
+              <h4>{{ testimonial.author }}</h4>
+              <p class="author-role">{{ testimonial.role }}</p>
+            </div>
+          </div>
         </div>
       </div>
-    </section>
-
+    </div>
+  </div>
+</section>
     <!-- Call to Action Section -->
     <section class="cta-section">
       <div class="container" data-aos="fade-up" data-aos-duration="1200">
         <h2>Ready to Become Part of Our Community?</h2>
-        <p>Schedule a tour, meet our principal, and see why Sunshine Elementary is the right choice for your child's education.</p>
+        <p>Schedule a tour, meet our principal, and see why Riruta Jubilee Academy is the right choice for your child's education.</p>
         <div class="cta-buttons">
           <router-link to="/contact" class="cta-btn primary">Contact Us</router-link>
           <router-link to="/admissions" class="cta-btn secondary">Admissions Info</router-link>
@@ -152,26 +157,29 @@ export default {
         classes: 20,
         years: 25
       },
-      latestNews: [
-        {
-          id: 1,
-          title: 'Winter Concert Schedule Released',
-          date: 'December 1, 2023',
-          excerpt: 'Join us for our annual winter concert series featuring performances from all grade levels...'
-        },
-        {
-          id: 2,
-          title: 'New STEM Lab Grand Opening',
-          date: 'November 15, 2023',
-          excerpt: 'We are excited to announce the opening of our state-of-the-art STEM laboratory...'
-        },
-        {
-          id: 3,
-          title: 'PTA Fundraiser Exceeds Goals',
-          date: 'November 5, 2023',
-          excerpt: 'Thanks to our amazing community, we raised over $15,000 for new playground equipment...'
-        }
-      ]
+     testimonials: [
+  {
+    id: 1,
+    text: "We chose Sunshine Elementary for its nurturing environment and excellent academic programs. Our daughter has thrived here both socially and academically.",
+    author: "Sarah Johnson",
+    role: "Parent of 3rd Grader",
+    avatar: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-4.0.3&auto=format&fit=crop&w=100&q=80"
+  },
+  {
+    id: 2,
+    text: "The teachers here go above and beyond to ensure every student feels valued and supported. The sense of community is truly special.",
+    author: "Michael Chen",
+    role: "Parent of 1st and 4th Graders",
+    avatar: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=100&q=80"
+  },
+  {
+    id: 3,
+    text: "I love coming to school every day! The projects are fun, my friends are awesome, and my teacher makes learning exciting.",
+    author: "Emily Rodriguez",
+    role: "5th Grade Student",
+    avatar: "https://images.unsplash.com/photo-1554151228-14d9def656e4?ixlib=rb-4.0.3&auto=format&fit=crop&w=100&q=80"
+  }
+]
     };
   },
   mounted() {
@@ -323,70 +331,59 @@ export default {
   opacity: 0.9;
 }
 
-/* News Preview Section Styles */
-.news-preview-section {
+/* Testimonials Section Styles */
+.testimonials-section {
   padding: 5rem 0;
   background-color: white;
 }
-.news-preview-section h2 {
-  text-align: center;
-  color: #1a4f8b;
-  font-size: 2.5rem;
-  margin-bottom: 3rem;
-}
-.news-preview-grid {
+.testimonials-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: 2rem;
-  margin-bottom: 3rem;
 }
-.news-preview-card {
-  background: white;
+.testimonial-card {
+  background: #f8f9fa;
   padding: 2rem;
-  border-radius: 10px;
-  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+  border-radius: 15px;
+  border-left: 4px solid #1a4f8b;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
-.news-preview-card:hover {
+.testimonial-card:hover {
   transform: translateY(-5px);
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
 }
-.news-preview-card h3 {
+.quote-icon {
+  font-size: 3rem;
   color: #1a4f8b;
+  line-height: 1;
   margin-bottom: 0.5rem;
 }
-.news-date {
+.testimonial-text {
+  font-style: italic;
+  color: #555;
+  line-height: 1.6;
+  margin-bottom: 1.5rem;
+}
+.testimonial-author {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+.author-image img {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+.author-details h4 {
+  color: #1a4f8b;
+  margin: 0;
+  font-size: 1.1rem;
+}
+.author-role {
   color: #666;
+  margin: 0;
   font-size: 0.9rem;
-  margin-bottom: 1rem;
-}
-.read-more-link {
-  color: #1a4f8b;
-  text-decoration: none;
-  font-weight: 500;
-  display: inline-block;
-  margin-top: 1rem;
-}
-.read-more-link:hover {
-  text-decoration: underline;
-}
-.view-all-news {
-  text-align: center;
-}
-.view-all-btn {
-  display: inline-block;
-  background-color: #ffd700;
-  color: #1a4f8b;
-  padding: 1rem 2rem;
-  text-decoration: none;
-  border-radius: 50px;
-  font-weight: 600;
-  transition: all 0.3s ease;
-}
-.view-all-btn:hover {
-  background-color: #1a4f8b;
-  color: white;
-  transform: translateY(-2px);
 }
 
 /* CTA Section Styles */
