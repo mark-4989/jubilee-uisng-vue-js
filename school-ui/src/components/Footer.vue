@@ -11,7 +11,7 @@ export default {
   name: 'TheFooter',
   data() {
     return {
-      schoolName: 'Sunshine Elementary School'
+      schoolName: 'Riruta Jubilee Academy'
     }
   }
 }

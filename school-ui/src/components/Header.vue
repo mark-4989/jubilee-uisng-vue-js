@@ -19,7 +19,7 @@ export default {
   name: 'TheHeader',
   data() {
     return {
-      schoolName: 'Sunshine Elementary School'
+      schoolName: 'Riruta Jubilee Academy'
     }
   }
 }
